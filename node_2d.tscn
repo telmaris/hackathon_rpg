@@ -26,6 +26,8 @@ shape = SubResource("RectangleShape2D_f6rlr")
 sprite_frames = SubResource("SpriteFrames_d5g65")
 script = ExtResource("1_sfkbq")
 
+[node name="equipment" type="Sprite2D" parent="player/main"]
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-234, -113)
 
