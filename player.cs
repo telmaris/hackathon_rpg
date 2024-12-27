@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using rpg;
 using itemId = System.Int32;
 using System.Reflection.Metadata;
+using System.Diagnostics;
 public class Backpack
 {
-	public Backpack(Player player)
+	public Backpack(player player)
 	{
 		p = player;
 	}
@@ -65,7 +66,8 @@ public class Backpack
 	//public int RemoveItem()
 
 	public Dictionary<int, ItemSlot> items;
-	public Player p;
+	public player p;
+	public bool visible = false;
 }
 
 public class Statistics
@@ -75,16 +77,32 @@ public class Statistics
 	public int wis = 1;
 	public int stam = 1;
 }
-public partial class Player : AnimatedSprite2D
+public partial class player : AnimatedSprite2D
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		eq = new Backpack(this);
+		stats = new Statistics();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		if(Input.IsActionJustPressed("equipment_key"))
+		{
+			if(eq.visible)	
+			{
+				Debug.Print("Equipment invisible");
+				eq.visible = false;
+			}
+			else
+			{
+				Debug.Print("Equipment visible");
+				eq.visible = true;
+			}
+			
+		}
 	}
 
 	public Backpack eq;
