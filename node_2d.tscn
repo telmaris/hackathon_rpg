@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://j5t6munupqln"]
+[gd_scene load_steps=8 format=3 uid="uid://j5t6munupqln"]
 
+[ext_resource type="Script" path="res://main.cs" id="1_anjno"]
 [ext_resource type="Script" path="res://player_1.cs" id="1_bpaiw"]
 [ext_resource type="Script" path="res://player.cs" id="1_sfkbq"]
 [ext_resource type="Texture2D" uid="uid://cyoxihx4755kd" path="res://icon.svg" id="2_sqr3n"]
@@ -12,7 +13,9 @@ size = Vector2(126, 126)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krvrt"]
 size = Vector2(126, 126)
 
-[node name="Node2D" type="Node2D"]
+[node name="main" type="Node2D"]
+position = Vector2(132, -86)
+script = ExtResource("1_anjno")
 
 [node name="player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_bpaiw")

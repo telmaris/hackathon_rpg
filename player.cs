@@ -2,7 +2,6 @@ using Godot;
 using System.Collections.Generic;
 
 using rpg;
-using itemId = System.Int32;
 using System.Reflection.Metadata;
 using System.Diagnostics;
 public class Backpack
@@ -10,6 +9,11 @@ public class Backpack
 	public Backpack(player player)
 	{
 		p = player;
+		items = new Dictionary<int, ItemSlot>();
+		for(int i = 0; i < backpackSize; i++)
+		{
+			items.Add(i, new ItemSlot(i));
+		}
 	}
 	public class ItemSlot
 	{
@@ -19,16 +23,17 @@ public class Backpack
 			i = null;
 		}
 
-		public int AddItem(itemId item)
+		public int AddItem(item item)
 		{
 			if(i is null)
 			{
-				i = new item(item);
+				i = item;
+				amount++;
 				return 0;				// success
 			}
-			else if(i.id == item && i.stackable)
+			else if(i.Id == item.Id && i.Stackable)
 			{
-				if(amount < i.maxStackSize)
+				if(amount < i.MaxStackSize)
 				{
 					amount++;
 					return 0;
@@ -42,21 +47,22 @@ public class Backpack
 			i = null;
 		}
 
-		public itemId GetItemId()
+		public int Getint()
 		{
-			return i is null ? 0 : i.id;
+			return i is null ? -1 : i.Id;
 		}
 		public readonly int slotId;
 		public item i;
 		public int amount = 0;
 	}
-	public int AddItem(itemId item)
+	public int AddItem(item item)
 	{
 		foreach(KeyValuePair<int,ItemSlot> pair in items)
 		{
 			ItemSlot slot = pair.Value;
 			if(slot.AddItem(item) == 0)
 			{
+				Debug.Print($"Added item ID: {slot.i.Id} in slot {slot.slotId}. Amount: {slot.amount}");
 				return 0;
 			}
 		}
@@ -66,6 +72,7 @@ public class Backpack
 	//public int RemoveItem()
 
 	public Dictionary<int, ItemSlot> items;
+	private int backpackSize = 16;
 	public player p;
 	public bool visible = false;
 }
@@ -102,6 +109,15 @@ public partial class player : AnimatedSprite2D
 				eq.visible = true;
 			}
 			
+		}
+
+		if(Input.IsActionJustPressed("add_testitem_nonstackable"))
+		{
+			eq.AddItem(ItemDatabase.Instance.GetItem(0));
+		}
+		if(Input.IsActionJustPressed("add_testitem_stackable"))
+		{
+			eq.AddItem(ItemDatabase.Instance.GetItem(1));
 		}
 	}
 
