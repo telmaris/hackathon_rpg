@@ -1,10 +1,9 @@
-[gd_scene load_steps=35 format=3 uid="uid://b7sgvtvnrm7on"]
+[gd_scene load_steps=33 format=3 uid="uid://j5t6munupqln"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_anjno"]
-[ext_resource type="Script" path="res://player_1.cs" id="1_bpaiw"]
-[ext_resource type="Script" path="res://player.cs" id="1_sfkbq"]
+[ext_resource type="Script" path="res://Player.cs" id="1_sfkbq"]
+[ext_resource type="Script" path="res://player_main.cs" id="2_xeybt"]
 [ext_resource type="SpriteFrames" uid="uid://bfdik65sfg1it" path="res://anims/player_man.tres" id="4_61n1d"]
-[ext_resource type="Script" path="res://PlayerAnim.cs" id="5_dchem"]
 [ext_resource type="Texture2D" uid="uid://vwvdyu7fkxch" path="res://images/enemies/2/attack1/imageedit_53_9350581908.png" id="5_pgls6"]
 [ext_resource type="Texture2D" uid="uid://bs5ymp07j3vr3" path="res://images/enemies/2/attack1/imageedit_55_2199136959.png" id="6_kbjdh"]
 [ext_resource type="Texture2D" uid="uid://b3auqam7suvu5" path="res://images/enemies/2/attack1/imageedit_57_2409032462.png" id="7_bvwv1"]
@@ -35,8 +34,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_inrun"]
 radius = 9.0
 height = 26.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_d5g65"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jpcrf"]
 animations = [{
@@ -165,26 +162,22 @@ animations = [{
 position = Vector2(132, -86)
 script = ExtResource("1_anjno")
 
-[node name="player" type="CharacterBody2D" parent="."]
+[node name="PlayerMainNode" type="CharacterBody2D" parent="."]
 position = Vector2(-50, 0)
-script = ExtResource("1_bpaiw")
+script = ExtResource("2_xeybt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerMainNode"]
 shape = SubResource("CapsuleShape2D_inrun")
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="PlayerMainNode"]
 zoom = Vector2(2, 2)
 
-[node name="main" type="AnimatedSprite2D" parent="player"]
-sprite_frames = SubResource("SpriteFrames_d5g65")
-script = ExtResource("1_sfkbq")
-
-[node name="equipment" type="Sprite2D" parent="player/main"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+[node name="Player" type="AnimatedSprite2D" parent="PlayerMainNode"]
 sprite_frames = ExtResource("4_61n1d")
 animation = &"idle"
-script = ExtResource("5_dchem")
+script = ExtResource("1_sfkbq")
+
+[node name="equipment" type="Sprite2D" parent="PlayerMainNode/Player"]
 
 [node name="animations" type="AnimatedSprite2D" parent="."]
 position = Vector2(-92, -39)

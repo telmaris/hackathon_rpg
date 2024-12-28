@@ -1,9 +1,9 @@
 using Godot;
 using System;
 
-public partial class player_1 : CharacterBody2D
+public partial class player_main : CharacterBody2D
 {
-	public const float Speed = 300.0f;
+	[Export] public float Speed = 300.0f;
 	
 	public override void _PhysicsProcess(double delta)
 	{
@@ -23,6 +23,9 @@ public partial class player_1 : CharacterBody2D
 		}
 
 		Velocity = velocity;
+		_velocity = velocity;
 		MoveAndSlide();
 	}
+
+	public Vector2 _velocity {	get; set; } = new Vector2(0,0);
 }
