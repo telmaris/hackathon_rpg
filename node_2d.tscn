@@ -1,29 +1,179 @@
-[gd_scene load_steps=8 format=3 uid="uid://j5t6munupqln"]
+[gd_scene load_steps=35 format=3 uid="uid://b7sgvtvnrm7on"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_anjno"]
 [ext_resource type="Script" path="res://player_1.cs" id="1_bpaiw"]
 [ext_resource type="Script" path="res://player.cs" id="1_sfkbq"]
-[ext_resource type="Texture2D" uid="uid://cyoxihx4755kd" path="res://icon.svg" id="2_sqr3n"]
+[ext_resource type="SpriteFrames" uid="uid://bfdik65sfg1it" path="res://anims/player_man.tres" id="4_61n1d"]
+[ext_resource type="Script" path="res://PlayerAnim.cs" id="5_dchem"]
+[ext_resource type="Texture2D" uid="uid://vwvdyu7fkxch" path="res://images/enemies/2/attack1/imageedit_53_9350581908.png" id="5_pgls6"]
+[ext_resource type="Texture2D" uid="uid://bs5ymp07j3vr3" path="res://images/enemies/2/attack1/imageedit_55_2199136959.png" id="6_kbjdh"]
+[ext_resource type="Texture2D" uid="uid://b3auqam7suvu5" path="res://images/enemies/2/attack1/imageedit_57_2409032462.png" id="7_bvwv1"]
+[ext_resource type="Texture2D" uid="uid://pmm4ln52w8hb" path="res://images/enemies/2/attack1/imageedit_59_5776903798.png" id="8_fed73"]
+[ext_resource type="Texture2D" uid="uid://c77vrwudna4ru" path="res://images/enemies/2/attack1/imageedit_61_3317308617.png" id="9_mvbhk"]
+[ext_resource type="Texture2D" uid="uid://njpog72bgkd1" path="res://images/enemies/2/walk1/imageedit_41_5149990850.png" id="10_l4bbh"]
+[ext_resource type="Texture2D" uid="uid://b64tp0cwa41ag" path="res://images/enemies/2/walk1/imageedit_43_7556502842.png" id="11_h7xux"]
+[ext_resource type="Texture2D" uid="uid://bu4xu65h160gi" path="res://images/enemies/2/walk1/imageedit_45_7649875595.png" id="12_l03wc"]
+[ext_resource type="Texture2D" uid="uid://ctopi7r0qvxfg" path="res://images/enemies/2/walk1/imageedit_49_6917823042.png" id="13_til6k"]
+[ext_resource type="Texture2D" uid="uid://bd3gn2spbgngd" path="res://images/enemies/2/walk1/imageedit_51_8895393513.png" id="14_dbeo8"]
+[ext_resource type="Texture2D" uid="uid://ckvrg3ht7jjfe" path="res://images/citizens/3/idle1/imageedit_21_4859424946.png" id="15_tjyyt"]
+[ext_resource type="Texture2D" uid="uid://b3ofdcm0oa3jb" path="res://images/citizens/3/idle1/imageedit_23_9584685113.png" id="16_4fjbe"]
+[ext_resource type="Texture2D" uid="uid://cq2xvowvvwt8h" path="res://images/citizens/3/idle1/imageedit_25_8085027541.png" id="17_o653x"]
+[ext_resource type="Texture2D" uid="uid://bpchn5qm7dd1p" path="res://images/citizens/3/idle1/imageedit_27_2095824806.png" id="18_bcb3f"]
+[ext_resource type="Texture2D" uid="uid://b2oyf41so3tle" path="res://images/citizens/2/walk1/imageedit_9_8055417145.png" id="19_84luj"]
+[ext_resource type="Texture2D" uid="uid://d312143pt07wl" path="res://images/citizens/2/walk1/imageedit_11_3937487110.png" id="20_j6utf"]
+[ext_resource type="Texture2D" uid="uid://q5jhh0ifqtq5" path="res://images/citizens/2/walk1/imageedit_13_4366915635.png" id="21_82mqe"]
+[ext_resource type="Texture2D" uid="uid://bwt8i03e8csj1" path="res://images/citizens/2/walk1/imageedit_15_2079053943.png" id="22_epnen"]
+[ext_resource type="Texture2D" uid="uid://c062384fxqn5w" path="res://images/citizens/2/walk1/imageedit_17_8844256593.png" id="23_q1st4"]
+[ext_resource type="Texture2D" uid="uid://deprngsa55pnp" path="res://images/citizens/2/walk1/imageedit_19_2054499398.png" id="24_evpro"]
+[ext_resource type="Texture2D" uid="uid://bsrnd3rqu8pk1" path="res://images/citizens/3/walk1/imageedit_29_7709069318.png" id="25_v8uuq"]
+[ext_resource type="Texture2D" uid="uid://d307tjy2h2crw" path="res://images/citizens/3/walk1/imageedit_31_5350798045.png" id="26_jyl5c"]
+[ext_resource type="Texture2D" uid="uid://dif2lbmmvicv3" path="res://images/citizens/3/walk1/imageedit_33_6844808547.png" id="27_ejbkh"]
+[ext_resource type="Texture2D" uid="uid://dv6x14vxyjrhl" path="res://images/citizens/3/walk1/imageedit_35_9307795137.png" id="28_fa0a8"]
+[ext_resource type="Texture2D" uid="uid://ytfskyi15own" path="res://images/citizens/3/walk1/imageedit_37_6058014052.png" id="29_scs18"]
+[ext_resource type="Texture2D" uid="uid://8cn34153re0l" path="res://images/citizens/3/walk1/imageedit_39_9969586172.png" id="30_mwj6d"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6rlr"]
-size = Vector2(126, 126)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_inrun"]
+radius = 9.0
+height = 26.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d5g65"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_krvrt"]
-size = Vector2(126, 126)
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpcrf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_pgls6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kbjdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bvwv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fed73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mvbhk")
+}],
+"loop": true,
+"name": &"gnome_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_l4bbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_h7xux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_l03wc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_til6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dbeo8")
+}],
+"loop": true,
+"name": &"gnome_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"idle_johnson",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_tjyyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4fjbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_o653x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_bcb3f")
+}],
+"loop": true,
+"name": &"idle_josefina",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_84luj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_j6utf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_82mqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_epnen")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_q1st4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_evpro")
+}],
+"loop": true,
+"name": &"walk_johnson",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_v8uuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_jyl5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ejbkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_fa0a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_scs18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_mwj6d")
+}],
+"loop": true,
+"name": &"walk_josefina",
+"speed": 5.0
+}]
 
 [node name="main" type="Node2D"]
 position = Vector2(132, -86)
 script = ExtResource("1_anjno")
 
 [node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(-50, 0)
 script = ExtResource("1_bpaiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-shape = SubResource("RectangleShape2D_f6rlr")
+shape = SubResource("CapsuleShape2D_inrun")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(2, 2)
 
 [node name="main" type="AnimatedSprite2D" parent="player"]
 sprite_frames = SubResource("SpriteFrames_d5g65")
@@ -31,12 +181,14 @@ script = ExtResource("1_sfkbq")
 
 [node name="equipment" type="Sprite2D" parent="player/main"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-234, -113)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+sprite_frames = ExtResource("4_61n1d")
+animation = &"idle"
+script = ExtResource("5_dchem")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-texture = ExtResource("2_sqr3n")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_krvrt")
+[node name="animations" type="AnimatedSprite2D" parent="."]
+position = Vector2(-92, -39)
+sprite_frames = SubResource("SpriteFrames_jpcrf")
+animation = &"gnome_attack"
+frame_progress = 0.209032
+offset = Vector2(92, 38)

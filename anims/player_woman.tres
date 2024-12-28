@@ -1,0 +1,55 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://booadmfmju60h"]
+
+[ext_resource type="Texture2D" uid="uid://ckvrg3ht7jjfe" path="res://images/citizens/3/idle1/imageedit_21_4859424946.png" id="1_tc4m3"]
+[ext_resource type="Texture2D" uid="uid://b3ofdcm0oa3jb" path="res://images/citizens/3/idle1/imageedit_23_9584685113.png" id="2_c2lwx"]
+[ext_resource type="Texture2D" uid="uid://cq2xvowvvwt8h" path="res://images/citizens/3/idle1/imageedit_25_8085027541.png" id="3_5oy8x"]
+[ext_resource type="Texture2D" uid="uid://bpchn5qm7dd1p" path="res://images/citizens/3/idle1/imageedit_27_2095824806.png" id="4_hu1no"]
+[ext_resource type="Texture2D" uid="uid://bsrnd3rqu8pk1" path="res://images/citizens/3/walk1/imageedit_29_7709069318.png" id="5_or2ti"]
+[ext_resource type="Texture2D" uid="uid://d307tjy2h2crw" path="res://images/citizens/3/walk1/imageedit_31_5350798045.png" id="6_5vva8"]
+[ext_resource type="Texture2D" uid="uid://dif2lbmmvicv3" path="res://images/citizens/3/walk1/imageedit_33_6844808547.png" id="7_6k2w2"]
+[ext_resource type="Texture2D" uid="uid://dv6x14vxyjrhl" path="res://images/citizens/3/walk1/imageedit_35_9307795137.png" id="8_kcelw"]
+[ext_resource type="Texture2D" uid="uid://ytfskyi15own" path="res://images/citizens/3/walk1/imageedit_37_6058014052.png" id="9_2smtf"]
+[ext_resource type="Texture2D" uid="uid://8cn34153re0l" path="res://images/citizens/3/walk1/imageedit_39_9969586172.png" id="10_v41r6"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tc4m3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c2lwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5oy8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hu1no")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_or2ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5vva8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6k2w2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kcelw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2smtf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v41r6")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]

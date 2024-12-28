@@ -69,4 +69,3 @@ namespace rpg
 		private readonly Dictionary<int, item> items;
 	}
 }
-

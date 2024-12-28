@@ -1,17 +1,17 @@
 {
-    "0" : {
-        "id" : 0,
-        "name" : "testItemNonstackable",
-        "mods" : [],
-        "stackable" : false,
-        "maxStackSize" : 1
-    },
+	"0" : {
+		"id" : 0,
+		"name" : "testItemNonstackable",
+		"mods" : [],
+		"stackable" : false,
+		"maxStackSize" : 1
+	},
 
-    "1" : {
-        "id" : 1,
-        "name" : "testItemStackable",
-        "mods" : [],
-        "stackable" : true,
-        "maxStackSize" : 5
-    }
+	"1" : {
+		"id" : 1,
+		"name" : "testItemStackable",
+		"mods" : [],
+		"stackable" : true,
+		"maxStackSize" : 5
+	}
 }
